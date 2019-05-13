@@ -27,10 +27,10 @@
 10) The selected fortune and lucky lottter number would be rendered to front end. 
 11) Server would save the rendered data information ( user_name , fortune, lottery number, time data was created) on User DB
 The layout of the page is going to look as below:
-![alt text](https://github.com/team-nullapi/team-null-front-end/blob/master/public/images/wireframe/CookieShow.png)
+![alt text](https://github.com/team-nullapi/team-null-front-end/blob/beta/public/images/wireframe/CookieShow.png)
 12) User can click on history button on navigation bar(Home page). This will render all the data (fortune, lottery number, time data was created) from user DB to front end. 
 The layout of the page is going to look as below:
-![alt text](https://github.com/team-nullapi/team-null-front-end/blob/master/public/images/wireframe/UserDataPage.png)
+![alt text](https://github.com/team-nullapi/team-null-front-end/blob/beta/public/images/wireframe/UserDataPage.png)
 13) User can click back button to go back to the home page. 
 
 
