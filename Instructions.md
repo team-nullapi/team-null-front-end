@@ -2,7 +2,7 @@
 
 1) As the user starts the applications, user would land into the start page. 
   The layout of the page is going to look as below:
-  ![alt text](https://github.com/team-nullapi/team-null-front-end/blob/beta/public/images/wireframe/InputPage.png)
+  ![alt text](https://github.com/team-nullapi/team-null-front-end/blob/beta/public/images/wireframe/UserInputPage.png)
 
 2) On start page, user be would required to enter a 'user-name'.
 
