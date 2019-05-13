@@ -1,6 +1,6 @@
 ## Conflict Plan
 What will your group do when it encounters conflict? We will get together, and vote on the options. Majority vote will be the deciding answer. 
-How will you raise concerns to members who are not adequately contributing? If that does arise, first speak to the individual, if that doesn't work will bring in at the group level. 
+How will you raise concerns to members who are not adequately contributing? If that does arise, first speak to the individual, if that doesn't work we will bring in at the group level. 
 What is your process to resolve conflicts? First try to resolve it at the lowest level, if cannot come to a decision, will bring issue towards group and we will come to a vote. 
 How and when will you escalate the conflict if your attempts are unsuccessful? First talk as a group, to see if we can come to an agreement. If that doesn't work will bring in TA's/instructor. 
 
