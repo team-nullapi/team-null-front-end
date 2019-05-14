@@ -1,15 +1,14 @@
 import React from 'react';
 import WebcamCapture from './webcamCapture';
 import Navbar from './navbar';
-
 /** Main Component **/
-class Main  extends React.Component {
+class Main extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       imgData: '',
       webcamEnabled: false,
-      userName: ''
+      userName: 'test'
     }
   }
 
