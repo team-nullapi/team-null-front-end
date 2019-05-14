@@ -14,6 +14,7 @@ class App extends React.Component {
       url: 'startPage'
     };
   }
+  
   setUserName = (userName) =>{
     this.setState({userName: userName});
   }
@@ -33,6 +34,7 @@ class App extends React.Component {
           (this.state.url==='startPage') 
           ? <StartPage 
           setUserName={this.setUserName} setURL={this.setURL} 
+          getUrl={this.state.url}
            /> 
           : <Homepage userName ={this.state.userName}setImgData={this.setImgData}/>
         }

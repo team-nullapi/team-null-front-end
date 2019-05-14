@@ -34,8 +34,8 @@ export const ButtonAppBar = props => {
           <Typography variant="h6" color="inherit" className={classes.grow}>
             Face Your Fortune
           </Typography>
-          
-          {(props.userName !== '') ? <Button color="inherit">History</Button> : ' '}
+          {console.log('props', props.getUrl)}
+          {(props.getUrl === 'startPage') ? ' ' : <Button color="inherit">History</Button> }
           {/* <p>{this.props.userName}</p> */}
           {/* <p>{this.props.getUserName()}</p> */}
         </Toolbar>
