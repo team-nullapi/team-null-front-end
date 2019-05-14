@@ -10,6 +10,7 @@ class WebcamCapture extends React.Component {
   capture = () => {
     const imageSrc = this.webcam.getScreenshot();
     this.props.handler(imageSrc);
+    this.props.setImgData(imageSrc);
   };
  
   render() {
@@ -21,7 +22,7 @@ class WebcamCapture extends React.Component {
  
     return (
      <React.Fragment>
-       <div id="webcam-container">
+        <div id="webcam-container">
           <Webcam
             audio={false}
             height={400}
@@ -31,7 +32,6 @@ class WebcamCapture extends React.Component {
             videoConstraints={videoConstraints}
           />
           <button onClick={this.capture}>Capture photo</button>
-
        </div>
       </React.Fragment>
     );
