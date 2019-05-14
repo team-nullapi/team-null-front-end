@@ -26,9 +26,9 @@
 The layout of the page is going to look as below:
 ![alt text](https://github.com/team-nullapi/team-null-front-end/blob/beta/public/images/wireframe/CookieShow.png)
   10a) Once the user clicks the cookie, the layut of the page is going to look as below:
-![alt text] (https://github.com/team-nullapi/team-null-front-end/blob/beta/public/images/wireframe/FortuneShow.png)
+![alt text](https://github.com/team-nullapi/team-null-front-end/blob/beta/public/images/wireframe/FortuneShow.png)
   10b) Once the user clicks the fortune it will fill the banner and show the lotto numbers. The layout of the page is going to look as below:
-  ![alt text] (https://github.com/team-nullapi/team-null-front-end/blob/beta/public/images/wireframe/LottoShow.png)
+  ![alt text](https://github.com/team-nullapi/team-null-front-end/blob/beta/public/images/wireframe/LottoShow.png)
 11) User can click on history button on navigation bar(Home page). This will render all the data (fortune, lotto number, time data was created) from user DB to front end. 
 The layout of the page is going to look as below:
 ![alt text](https://github.com/team-nullapi/team-null-front-end/blob/beta/public/images/wireframe/UserDataPage.png)
