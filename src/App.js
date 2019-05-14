@@ -1,7 +1,5 @@
 import React from 'react';
 import WebcamCapture from './webcamCapture';
-import Navbar from './navbar';
-import Main from './main';
 
 /** Main Component **/
 class Main  extends React.Component {
@@ -56,7 +54,6 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar />
         <Main />
       </React.Fragment>
     );
