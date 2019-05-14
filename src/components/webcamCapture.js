@@ -10,6 +10,7 @@ class WebcamCapture extends React.Component {
   capture = () => {
     const imageSrc = this.webcam.getScreenshot();
     this.props.handler(imageSrc);
+    this.props.setImgData(imageSrc);
   };
  
   render() {
