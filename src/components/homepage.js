@@ -1,16 +1,17 @@
 import React from 'react';
-import WebcamCapture from './webcamCapture';
+import WebCam from './webcam';
 
 class Homepage extends React.Component{
+ 
  render() {
    return(
     <div class ='homePage'>
        <h3> Hi {this.props.userName} Ready for your fortune ?</h3>
-      <WebcamCapture />
+        <WebCam setImgData={this.props.setImgData}/>
     </div>
    );
  }
 
 }
 
-export default Homepage;
+export default Homepage
