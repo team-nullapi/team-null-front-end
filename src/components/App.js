@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './navbar';
 import StartPage from './startpage';
 import Homepage from './homepage';
 // import {Router, Route} from 'react-router';
@@ -14,6 +15,7 @@ class App extends React.Component {
       url: 'startPage'
     };
   }
+  
   setUserName = (userName) =>{
     this.setState({userName: userName});
   }
