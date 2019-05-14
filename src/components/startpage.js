@@ -1,5 +1,7 @@
 import React from 'react'
+import NavBar from './navbar'
 import UserInput from './userInput'
+
 
 class StartPage extends React.Component{
   constructor(props){
@@ -8,8 +10,7 @@ class StartPage extends React.Component{
       userName : ''
     };
   }
-  handleChange = e => {
-    let userName = e.target.value;
+  handleChange = (userName) => {
     this.setState({userName});
   }
   handleSubmit = e =>{
@@ -19,25 +20,19 @@ class StartPage extends React.Component{
   }
   render(){
     return (
+      <>
+      <NavBar getUrl={this.props.getUrl}/>
       <div
           style={{
               position: 'absolute', 
               left: '50%', 
               top: '40%',
               transform: 'translate(-50%, -50%)'
-          }}
-      >
-          <UserInput/>
-      </div>
-      // <div class='startPage'>
-      // <form onSubmit ={this.handleSubmit}>
-      //   <h2>Hi, What's your name?</h2>
-      //   <input onChange={this.handleChange}></input>
-      //   <button> Submit</button>
-      // </form>
-      // </div>
+          }}>
+      <UserInput setUserName={this.handleChange} handleSubmit={this.handleSubmit}/>
+      </div> 
+      </>
     )
   }
 }
-
 export default StartPage;

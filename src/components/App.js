@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from './navbar';
 import StartPage from './startpage';
 import Homepage from './homepage';
 // import {Router, Route} from 'react-router';
@@ -10,7 +9,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state ={
-      userName : '',
+      userName : ' ',
       imgData : '',
       url: 'startPage'
     };
@@ -26,12 +25,18 @@ class App extends React.Component {
     this.setState({url})
   };
 
+
   render() {
     
     return (
       <React.Fragment>
         {
-          (this.state.url==='startPage') ? <StartPage setUserName={this.setUserName} setURL={this.setURL}/> : <Homepage setImgData={this.setImgData}/>
+          (this.state.url==='startPage') 
+          ? <StartPage 
+          setUserName={this.setUserName} setURL={this.setURL} 
+          getUrl={this.state.url}
+           /> 
+          : <Homepage userName ={this.state.userName}setImgData={this.setImgData}/>
         }
       </React.Fragment>
     );
