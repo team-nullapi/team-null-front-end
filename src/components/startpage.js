@@ -1,4 +1,5 @@
 import React from 'react'
+import NavBar from './navbar'
 
 class StartPage extends React.Component{
   constructor(props){
@@ -18,12 +19,14 @@ class StartPage extends React.Component{
   }
   render(){
     return (
-      <div class='startPage'>
+      <div className='startPage'>
+      <NavBar userName={this.state.userName}/>
       <form onSubmit ={this.handleSubmit}>
         <h2>Hi, What's your name?</h2>
         <input onChange={this.handleChange}></input>
         <button> Submit</button>
       </form>
+      <p>{this.props.userName}</p>
       </div>
     )
   }
