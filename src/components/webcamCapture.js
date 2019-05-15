@@ -8,6 +8,7 @@ class WebcamCapture extends React.Component {
   setRef = webcam => {
     this.webcam = webcam;
   };
+
  // once the image is captured it set imgData, url for App, and sends imgData to back end
   capture = () => {
     const imageSrc = this.webcam.getScreenshot();
@@ -22,7 +23,7 @@ class WebcamCapture extends React.Component {
       height: 720,
       facingMode: "user"
     };
- 
+
     return (
      <React.Fragment>
         <div className="webcam-container">
