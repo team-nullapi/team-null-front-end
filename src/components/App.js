@@ -1,9 +1,10 @@
 import React from 'react';
 import StartPage from './startpage';
 import Homepage from './homepage';
+import History from './history';
+import About from './about';
 import superagent from 'superagent';
 import ResultPage from './resultpage'
-// import {Router, Route} from 'react-router';
 
 
 /** App Component 
@@ -30,32 +31,32 @@ class App extends React.Component {
   setURL = (url) => {
     this.setState({url})
   };
-  setUserData (userData){
+  setUserData = (userData) => {
     this.setState({userData})
   }
   //sending data to server
-  postUserData  = async () => {
-    superagent.post('http://localhost:3000/pic')
+  postUserData  = async (img) => {
+     await superagent.post(`${process.env.REACT_APP_API_URL}/pic`)
     .field('imageObj', this.state.imgData)
     .field('userName', this.state.userName)
     .then(
       res => {
-        {this.setUserData(res.body)}
+        console.log('res', res.body);
+        this.setUserData(res.body)
       }
     )
 
     
   }
   // upon reaching the result page sends data to server and recives data back
-  componentDidMount(){
-    if(this.state.url==='resultPage'){
-      this.postUserData();
-    }
-  }
+  // componentDidMount(){
+  //   if(this.state.url==='resultPage'){
+  //     this.postUserData();
+  //   }
+  // }
 
 
   render() {
-    
     return (
       <React.Fragment>
         {
@@ -69,17 +70,13 @@ class App extends React.Component {
           setUserName={this.setUserName} setURL={this.setURL} 
           getUrl={this.state.url}
            /> 
-          : ' '
-        }
-        {
-          (this.state.url ==='homePage')
-          ? <Homepage userName ={this.state.userName}setImgData={this.setImgData} setURL={this.setURL}/>
-          : ' '
-        }
-        {
-          (this.state.url === 'resultPage')
-          ?<ResultPage />
-          : ' '
+          : (this.state.url ==='homePage')
+          ? <Homepage setData={this.setUserData} userName ={this.state.userName}setImgData={this.setImgData} setURL={this.setURL}/>
+          : (this.state.url === 'resultPage')
+          ? <ResultPage />
+          : (this.state.url === 'historyPage')
+          ? <History userData={this.state.userData}/>
+          : <About />
         }
       </React.Fragment>
     );
