@@ -36,7 +36,7 @@ class App extends React.Component {
           setUserName={this.setUserName} setURL={this.setURL} 
           getUrl={this.state.url}
            /> 
-          : <Homepage userName ={this.state.userName}setImgData={this.setImgData}/>
+          : <Homepage setURL={this.setURL} userName={this.state.userName}setImgData={this.setImgData}/>
         }
       </React.Fragment>
     );
