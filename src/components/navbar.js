@@ -31,7 +31,7 @@ class ButtonAppBar extends React.Component {
   }
   handleClick = () => {
     console.log('props', this.props)
-    // this.props.setURL('historyPage');
+    this.props.setURL('historyPage');
   }
   render(){
     const { classes } = this.props;
@@ -45,7 +45,7 @@ class ButtonAppBar extends React.Component {
             <Typography variant="h6" color="inherit" className={classes.grow}>
               Face Your Fortune
             </Typography>
-            {(this.props.getUrl === 'startPage') ? ' ' : <Button onClick={this.handleClick} color="inherit"> <i class="material-icons">poll</i></Button> }
+            {(this.props.getUrl === 'startPage') || (this.props.getUrl === 'historyPage') ? ' ' : <Button onClick={this.handleClick} color="inherit"> <i class="material-icons">poll</i></Button> }
             <Button color="inherit">
               <i class="material-icons">group</i>
             </Button> 

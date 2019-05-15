@@ -1,5 +1,6 @@
 import React from 'react';
 import superagent from 'superagent';
+import NavBar from './navbar'
 
 
 class History extends React.Component {
@@ -20,6 +21,7 @@ class History extends React.Component {
   render(){
     return(
       <>
+        <NavBar setURL={this.props.setURL} getUrl={this.props.getUrl} user={this.props.user}/>
         <h2>History</h2>
       </>
     )
