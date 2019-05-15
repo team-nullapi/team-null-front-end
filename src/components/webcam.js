@@ -1,6 +1,6 @@
 import React from 'react';
 import superagent from 'superagent';
-import WebcamCapture from './webcamCapture';
+import WebcamCapture from './webcamcapture';
 
 class Webcam  extends React.Component {
   constructor(props){
@@ -12,7 +12,7 @@ class Webcam  extends React.Component {
   }
 
   handleImageRequest = async (obj) => {
-    return await superagent.post('http://localhost:3000/pic')
+    return await superagent.post('http://localhost:3000/pic') // will need to add env
     .field('imageObj', obj.data.imgData)
     .field('image', 'user image');
   }
