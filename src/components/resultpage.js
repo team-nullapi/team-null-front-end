@@ -7,7 +7,8 @@ class ResultPage extends React.Component{
   render(){
     return(
       <div className='resultPage'>
-        <NavBar setURL={this.props.setURL} getUrl={this.props.getUrl} user={this.props.user}/>
+        <NavBar setURL={this.props.setURL} getUrl={this.props.getUrl} user={this.props.user}
+        />
       <div
           style={{
               position: 'absolute', 
@@ -15,7 +16,7 @@ class ResultPage extends React.Component{
               top: '60%',
               transform: 'translate(-50%, -50%)'
           }}>
-          <Chart />
+          <Chart stats={this.props.stats}/>
         </div>
         <div
           style={{

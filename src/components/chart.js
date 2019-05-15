@@ -2,43 +2,51 @@ import React from 'react';
 import Doughnut from 'react-chartjs-2'
 
 class Chart extends React.Component{
+  
   constructor(props){
+    
     super(props);
     this.state = {
-      chartData: {
-        labels: ['Sadness', 'Neutral', 'Disgust', 'Anger', 'Surprise', 'Fear','Happiness'],
-        datasets:[
-          {
-            label: 'Statisfaction',
-            data:[
-              4,
-              5,
-              7,
-              8,
-              90,
-              22,
-              23
-            ],
-            backgroundColor:[
-              'black',
-              'lightgreen',
-              'purple',
-              'red',
-              'orange',
-              'pink',
-              'blue',
-              'brown'
-            ],
-          }
-        ]
-      }
+      stat: [],
     }
   }
+
   render(){
+    const { stats } = this.props;
+    let data = [];
+    /*
+    'Disgust', 'Anger', 'Surprise', 'Fear','Happiness'
+    */
+    data.push(stats.sadness);
+    data.push(stats.neutral);
+    data.push(stats.disgust);
+    data.push(stats.anger);
+    data.push(stats.surprise);
+    data.push(stats.fear);
+    data.push(stats.happiness);
+    const chartData = {
+      labels: ['Sadness', 'Neutral', 'Disgust', 'Anger', 'Surprise', 'Fear','Happiness'],
+      datasets:[
+        {
+          label: 'Statisfaction',
+          data:data,
+          backgroundColor:[
+            'black',
+            'lightgreen',
+            'purple',
+            'red',
+            'orange',
+            'pink',
+            'blue',
+            'brown'
+          ],
+        }
+      ]
+    }
     return(
       <div className ='resultChart'>
         <Doughnut
-          data={this.state.chartData}
+          data={chartData}
           options={{
               title : {
                 display: true,
