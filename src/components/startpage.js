@@ -2,7 +2,10 @@ import React from 'react'
 import NavBar from './navbar'
 import UserInput from './userInput'
 
-
+/** StartPage Component 
+ * Get user name from user and set 'userName' state for App
+ * By calling User Input Component
+ * **/
 class StartPage extends React.Component{
   constructor(props){
     super(props);
@@ -21,7 +24,7 @@ class StartPage extends React.Component{
   render(){
     return (
       <>
-      <NavBar setUrl={this.props.setURL} getUrl={this.props.getUrl}/>
+      <NavBar setURL={this.props.setURL} getUrl={this.props.getUrl}/>
       <div
           style={{
               position: 'absolute', 
