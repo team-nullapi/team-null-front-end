@@ -1,6 +1,6 @@
 import React from 'react';
 import superagent from 'superagent';
-import WebcamCapture from './webcamCapture';
+import WebcamCapture from './webcamcapture';
 
 /** WebCam Component 
  * Get user's picture from user and set 'imgData' state for App
@@ -45,7 +45,7 @@ class Webcam  extends React.Component {
   render(){
     const { webcamEnabled, imgData } = this.state;
 
-    let cam = webcamEnabled && !imgData ? (
+    let content = webcamEnabled && !imgData ? (
       <WebcamCapture handler={this.handleWebcam} setImgData={this.props.setImgData} setURL={this.props.setURL}/>
 
     ) : imgData && !webcamEnabled ? 

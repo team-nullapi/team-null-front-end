@@ -17,7 +17,7 @@ class App extends React.Component {
       userName : ' ',
       imgData : '',
       url: 'startPage',
-      userData : [],
+      userData : {},
     };
   }
   /* The setter to Set the state of APP object */
@@ -35,7 +35,7 @@ class App extends React.Component {
   }
   //sending data to server
   postUserData  = async () => {
-     await superagent.post('http://localhost:3000/pic')
+    superagent.post('http://localhost:3000/pic')
     .field('imageObj', this.state.imgData)
     .field('userName', this.state.userName)
     .then(
