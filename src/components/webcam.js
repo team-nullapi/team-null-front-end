@@ -12,7 +12,7 @@ class Webcam  extends React.Component {
   }
 
   handleImageRequest = async (obj) => {
-    return await superagent.post('http://localhost:3000/pic') // will need to add env
+    return await superagent.post(`${process.env.REACT_APP_API_URL}/pic`) // will need to add env
     .field('imageObj', obj.data.imgData)
     .field('image', 'user image');
   }
