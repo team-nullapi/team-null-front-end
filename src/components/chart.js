@@ -1,46 +1,64 @@
 import React from 'react';
-var Component = React.Component;
-var CanvasJSReact = require('');
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import Doughnut from 'react-chartjs-2'
 
 class Chart extends React.Component{
-  
+  constructor(props){
+    super(props);
+    this.state = {
+      chartData: {
+        labels: ['Sadness', 'Neutral', 'Disgust', 'Anger', 'Surprise', 'Fear','Happiness'],
+        datasets:[
+          {
+            label: 'Statisfaction',
+            data:[
+              4,
+              5,
+              7,
+              8,
+              9,
+              20
+            ],
+            backgroundColor:[
+              'black',
+              'lightgreen',
+              'purple',
+              'red',
+              'orange',
+              'pink',
+              'blue'
+            ],
+          }
+        ]
+      }
+    }
+  }
   render(){
-		const options = {
-			animationEnabled: true,
-			title: {
-				text: "Customer Satisfaction"
-			},
-			subtitles: [{
-				text: "71% Positive",
-				verticalAlign: "center",
-				fontSize: 24,
-				dockInsidePlotArea: true
-			}],
-			data: [{
-				type: "doughnut",
-				showInLegend: true,
-				indexLabel: "{name}: {y}",
-				yValueFormatString: "#,###'%'",
-				dataPoints: [
-					{ name: "Unsatisfied", y: 5 },
-					{ name: "Very Unsatisfied", y: 31 },
-					{ name: "Very Satisfied", y: 40 },
-					{ name: "Satisfied", y: 17 },
-					{ name: "Neutral", y: 7 }
-				]
-			}]
-		}
-		return (
-		<div>
-			<CanvasJSChart options = {options}
-				/* onRef={ref => this.chart = ref} */
-			/>
-			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-		</div>
-		);
-	}
+    return(
+      <div className ='resultChart'>
+        <Doughnut
+          data={this.state.chartData}
+          options={{
+              title : {
+                display: true,
+                text: '  Emotions',
+                fontColor: 'rgb(255,215,0)',
+                fontSize: 20
+              },
+              legend:{
+                display:true,
+                position: 'left',
+                labels: {
+                  fontColor: 'rgb(255,215,0)',
+                  fontSize: 16
+                }
+              },
+              responsive: true,
+              maintainAspectRatio: false
+            }}
+          />
+      </div>
+    )
+  }
 }
 
 
