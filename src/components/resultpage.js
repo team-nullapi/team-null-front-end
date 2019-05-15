@@ -25,7 +25,7 @@ class ResultPage extends React.Component{
               top: '60%',
               transform: 'translate(-50%, -50%)'
           }}>
-          <Fortune />
+          <Fortune stat={this.props.stats}/>
       </div> 
        
       </div>
