@@ -7,17 +7,15 @@ import NavBar from './navbar'
  * This Component sets the state for imgData for App
  * **/
 class Homepage extends React.Component{
- 
- render() {
-   return(
+  render() {
+    return(
     <div className ='homePage'>
     <NavBar setURL={this.props.setURL} getUrl={this.props.getUrl} user={this.props.user} />
     <h3> Hi {this.props.userName} Ready for your fortune ?</h3>
     <WebCam setData={this.props.setData} setImgData={this.props.setImgData} setURL={this.props.setURL}/>
     </div>
-   );
- }
-
+    );
+  }
 }
 
 export default Homepage

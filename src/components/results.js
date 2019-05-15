@@ -16,6 +16,7 @@ class Result extends React.Component {
   }
 
   render() {
+    // const {  } = this.state;
     return (
       <Zoom>
         <ReactCardFlip flipSpeedBackToFront="2" flipSpeedFrontToBack	="2"isFlipped={this.state.isFlipped}>
@@ -25,11 +26,12 @@ class Result extends React.Component {
           <div key="back" >
           <div class="container">
           <img onClick={this.handleClick} height="800" width="800" src={require('../images/card2.png')} alt="card"/>
-            <div class="bottom-left">Bottom Left</div>
-            <div class="top-left">Top Left</div>
-            <div class="top-right">Top Right</div>
-            <div class="bottom-right">Bottom Right</div>
-            <div class="centered">Centered</div>
+            <div class="bottom-left"></div>
+            <div class="top-left"></div>
+            <div class="top-right"></div>
+            <div class="bottom-right"></div>
+            <div class="centered"><span id="domTitle">FEAR</span>
+            "I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects"</div>
           </div>
 
           </div>
