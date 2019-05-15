@@ -24,7 +24,7 @@ class StartPage extends React.Component{
   render(){
     return (
       <>
-      <NavBar setURL={this.props.setURL} getUrl={this.props.getUrl}/>
+      <NavBar setURL={this.props.setURL} getUrl={this.props.getUrl} user={this.props.user}/>
       <div
           style={{
               position: 'absolute', 
