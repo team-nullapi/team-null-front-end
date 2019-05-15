@@ -20,6 +20,7 @@ const styles = {
     marginRight: 20,
   }
 };
+
 /** ButtonAppBar Component 
  * All the styling for the header in each page
  * History is only render when user name is inputed
@@ -43,9 +44,10 @@ class ButtonAppBar extends React.Component {
             <Typography variant="h6" color="inherit" className={classes.grow}>
               Face Your Fortune
             </Typography>
-            {(this.props.getUrl === 'startPage') ? ' ' : <Button onClick={this.handleClick} color="inherit">History</Button> }
-            {/* <p>{this.props.userName}</p> */}
-            {/* <p>{this.props.getUserName()}</p> */}
+            {(this.props.getUrl === 'startPage') ? ' ' : <Button onClick={this.handleClick} color="inherit"> <i class="material-icons">poll</i></Button> }
+            <Button color="inherit">
+              <i class="material-icons">group</i>
+            </Button> 
           </Toolbar>
         </AppBar>
       </div>
