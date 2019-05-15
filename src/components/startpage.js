@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from './navbar'
 import UserInput from './userInput'
-import Results from './results'
+
 
 /** StartPage Component 
  * Get user name from user and set 'userName' state for App
@@ -40,17 +40,7 @@ class StartPage extends React.Component{
       <UserInput 
         setUserName={this.handleChange} 
         handleSubmit={this.handleSubmit}/>
-      </div> 
-      <div
-          style={{
-              position: 'absolute', 
-              left: '50%', 
-              top: '60%',
-              transform: 'translate(-50%, -50%)'
-          }}>
-{/* //               <Results />  Fourtune Component to use */}
-      </div>   
-  
+      </div>  
       </>
     )
   }
