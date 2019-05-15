@@ -16,6 +16,7 @@ class Webcam  extends React.Component {
   }
 
   handleImageRequest = async (obj) => {
+    console.log('obj', obj);
     return await superagent.post(`${obj.url}/${obj.resource}`)
     .field('username', obj.data.username)
     .field('imageObj', obj.data.imgData)
