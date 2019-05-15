@@ -12,13 +12,15 @@ class History extends React.Component {
   }
 
   componentDidMount() {
-    if(this.props.getURL === 'historyPage') {
-      superagent.get(`${process.env.REACT_APP_API_URL}/fortunes`).query({data: this.props.user})
+    if(this.props.getUrl === 'historyPage') {
+      superagent.get(`${process.env.REACT_APP_API_URL}/fortunes`).query({data: { username: this.props.user}})
       .then(results => this.setState({ fortunes: results }))
+      .catch(err => console.error(err));
     }
   }
 
   render(){
+    console.log('props', this.props);
     return(
       <>
         <NavBar setURL={this.props.setURL} getUrl={this.props.getUrl} user={this.props.user}/>
