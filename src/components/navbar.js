@@ -29,13 +29,20 @@ export const ButtonAppBar = props => {
       <AppBar position="static"  style={{ background: 'transparent', boxShadow: 'none'}}>
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
+          <i class="material-icons">whatshot</i>
+            {/* <MenuIcon /> */}
           </IconButton>
           <Typography variant="h6" color="inherit" className={classes.grow}>
             Face Your Fortune
           </Typography>
           {console.log('props', props.getUrl)}
-          {(props.getUrl === 'startPage') ? ' ' : <Button color="inherit">History</Button> }
+          {(props.getUrl === 'startPage') ? ' ' : 
+            <Button color="inherit">
+              <i class="material-icons">poll</i>
+            </Button> }
+            <Button color="inherit">
+              <i class="material-icons">group</i>
+            </Button> 
           {/* <p>{this.props.userName}</p> */}
           {/* <p>{this.props.getUserName()}</p> */}
         </Toolbar>

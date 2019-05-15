@@ -43,7 +43,6 @@ class StartPage extends React.Component{
               top: '60%',
               transform: 'translate(-50%, -50%)'
           }}>
-      <Results />
       </div> 
       </>
     )
