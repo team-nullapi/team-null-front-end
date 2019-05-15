@@ -40,6 +40,7 @@ export const ButtonAppBar = props => {
             <Button color="inherit">
               <i class="material-icons">poll</i>
             </Button> }
+
             <Button color="inherit">
               <i class="material-icons">group</i>
             </Button> 

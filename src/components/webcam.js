@@ -17,6 +17,7 @@ class Webcam  extends React.Component {
 
   handleImageRequest = async (obj) => {
     return await superagent.post(`${obj.url}/${obj.resource}`)
+    .field('username', obj.data.username)
     .field('imageObj', obj.data.imgData)
     .field('image', 'user image');
   }
@@ -32,7 +33,7 @@ class Webcam  extends React.Component {
         url:process.env.REACT_APP_API_URL,
         resource:'pic',
         data: {
-          username: this.state.userName,
+          username: this.props.user,
           imgData: img
         }
       })

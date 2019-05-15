@@ -17,23 +17,6 @@ class WebcamCapture extends React.Component {
     this.props.setURL('resultPage');
   };
  
-  handleWebcam = (img) => {
-    this.setState({
-      webcamEnabled: !this.state.webcamEnabled,
-      imgData: img
-    })
- 
-    this.handleImageRequest({
-        url:'http://localhost:3000',
-        resource:'pic',
-        data: {
-          username: this.state.userName,
-          imgData: img
-        }
-      })
-    .then(result => console.log(result))
-  }
- 
   render() {
     const videoConstraints = {
       width: 1280,

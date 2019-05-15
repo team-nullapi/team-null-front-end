@@ -82,9 +82,18 @@ class App extends React.Component {
               user={this.state.userName}
             />
           : (this.state.url === 'resultPage')
-          ? <ResultPage />
+          ? <ResultPage
+              setURL={this.setURL}
+              getUrl={this.state.url}
+              user={this.state.userName} 
+            />
           : (this.state.url === 'historyPage')
-          ? <History userData={this.state.userData}/>
+          ? <History
+              userData={this.state.userData}
+              setURL={this.setURL}
+              getUrl={this.state.url}
+              user={this.state.userName}
+            />
           : <About />
         }
       </React.Fragment>
