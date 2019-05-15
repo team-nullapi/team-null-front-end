@@ -22,7 +22,7 @@ const styles = {
 };
 
 export const ButtonAppBar = props => {
-  const { classes} = props;
+  const { classes, setURL } = props;
 
   return (
     <div className={classes.root}>
@@ -34,8 +34,7 @@ export const ButtonAppBar = props => {
           <Typography variant="h6" color="inherit" className={classes.grow}>
             Face Your Fortune
           </Typography>
-          {console.log('props', props.getUrl)}
-          {(props.getUrl === 'startPage') ? ' ' : <Button color="inherit">History</Button> }
+          {(props.getUrl === 'startPage') ? ' ' : <Button onClick={setURL('historyPage')} color="inherit">History</Button> }
           {/* <p>{this.props.userName}</p> */}
           {/* <p>{this.props.getUserName()}</p> */}
         </Toolbar>
