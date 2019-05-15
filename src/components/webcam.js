@@ -1,5 +1,6 @@
 import React from 'react';
-import WebcamCapture from './webcamcapture';
+import superagent from 'superagent';
+import WebcamCapture from './webcamCapture';
 
 class Webcam  extends React.Component {
   constructor(props){
@@ -10,11 +11,27 @@ class Webcam  extends React.Component {
     }
   }
 
+  handleImageRequest = async (obj) => {
+    return await superagent.post(`${process.env.REACT_APP_API_URL}/pic`) // will need to add env
+    .field('imageObj', obj.data.imgData)
+    .field('image', 'user image');
+  }
+
   handleWebcam = (img) => {
     this.setState({ 
       webcamEnabled: !this.state.webcamEnabled,
       imgData: img
     })
+
+    this.handleImageRequest({
+        url:'http://localhost:3000',
+        resource:'pic',
+        data: {
+          username: this.state.userName,
+          imgData: img
+        }
+      })
+    .then(result => console.log(result))
   }
 
   controlWebcam = () => {
@@ -23,11 +40,13 @@ class Webcam  extends React.Component {
 
   render(){
     const { webcamEnabled, imgData } = this.state;
-    let cam = webcamEnabled && !imgData ? (
+    let content = webcamEnabled && !imgData ? (
       <WebcamCapture handler={this.handleWebcam} setImgData={this.props.setImgData}/>
     ) : imgData && !webcamEnabled ? 
       (
-        <p> </p>
+        <React.Fragment>
+          <h3>Things</h3>
+        </React.Fragment>
       )
     : (
         <React.Fragment>
@@ -37,7 +56,7 @@ class Webcam  extends React.Component {
     return (
       <React.Fragment>
         <main>
-          {cam}
+          {content}
         </main>
       </React.Fragment>
     )
