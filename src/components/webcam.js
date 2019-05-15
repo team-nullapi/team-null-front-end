@@ -26,6 +26,7 @@ class Webcam  extends React.Component {
       webcamEnabled: !this.state.webcamEnabled,
       imgData: img
     })
+    // this.props.requestHandler();
 
     this.handleImageRequest({
         url:process.env.REACT_APP_API_URL,
@@ -35,7 +36,7 @@ class Webcam  extends React.Component {
           imgData: img
         }
       })
-    .then(result => console.log(result))
+    .then(result => this.props.setData(result.body))
   }
 
   controlWebcam = () => {

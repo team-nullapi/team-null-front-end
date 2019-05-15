@@ -13,7 +13,7 @@ class Homepage extends React.Component{
     <div className ='homePage'>
     <NavBar setURL={this.props.setURL} />
     <h3> Hi {this.props.userName} Ready for your fortune ?</h3>
-    <WebCam setImgData={this.props.setImgData} setURL={this.props.setURL}/>
+    <WebCam setData={this.props.setData} setImgData={this.props.setImgData} setURL={this.props.setURL}/>
     </div>
    );
  }

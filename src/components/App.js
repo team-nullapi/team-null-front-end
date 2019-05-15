@@ -18,7 +18,7 @@ class App extends React.Component {
       userName : ' ',
       imgData : '',
       url: 'startPage',
-      userData : [],
+      userData : {},
     };
   }
   /* The setter to Set the state of APP object */
@@ -31,11 +31,11 @@ class App extends React.Component {
   setURL = (url) => {
     this.setState({url})
   };
-  setUserData (userData){
+  setUserData = (userData) => {
     this.setState({userData})
   }
   //sending data to server
-  postUserData  = async () => {
+  postUserData  = async (img) => {
      await superagent.post(`${process.env.REACT_APP_API_URL}/pic`)
     .field('imageObj', this.state.imgData)
     .field('userName', this.state.userName)
@@ -49,11 +49,11 @@ class App extends React.Component {
     
   }
   // upon reaching the result page sends data to server and recives data back
-  componentDidMount(){
-    if(this.state.url==='resultPage'){
-      this.postUserData();
-    }
-  }
+  // componentDidMount(){
+  //   if(this.state.url==='resultPage'){
+  //     this.postUserData();
+  //   }
+  // }
 
 
   render() {
@@ -71,7 +71,7 @@ class App extends React.Component {
           getUrl={this.state.url}
            /> 
           : (this.state.url ==='homePage')
-          ? <Homepage userName ={this.state.userName}setImgData={this.setImgData} setURL={this.setURL}/>
+          ? <Homepage setData={this.setUserData} userName ={this.state.userName}setImgData={this.setImgData} setURL={this.setURL}/>
           : (this.state.url === 'resultPage')
           ? <ResultPage />
           : (this.state.url === 'historyPage')

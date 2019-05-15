@@ -10,12 +10,12 @@ class History extends React.Component {
     }
   }
 
-  componentDidMount() {
-    if(location.id && appURL ) {
+  // componentDidMount() {
+  //   if(location.id && appURL ) {
       
-      .then(results => this.setState({ fortunes: results.body }))
-    }
-  }
+  //     .then(results => this.setState({ fortunes: results.body }))
+  //   }
+  // }
 
   render(){
     return(
