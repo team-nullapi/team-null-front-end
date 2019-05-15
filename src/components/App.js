@@ -15,7 +15,7 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state ={
-      userName : ' ',
+      userName : '',
       imgData : '',
       url: 'startPage',
       userData : {},
@@ -66,12 +66,21 @@ class App extends React.Component {
           // Home page:  Where user's picture is taken
           // Result page: Where fortune is rendered
           (this.state.url==='startPage') 
-          ? <StartPage 
-          setUserName={this.setUserName} setURL={this.setURL} 
-          getUrl={this.state.url}
+          ? <StartPage
+              setUserName={this.setUserName}
+              setURL={this.setURL} 
+              getUrl={this.state.url}
+              user={this.state.userName}
            /> 
           : (this.state.url ==='homePage')
-          ? <Homepage setData={this.setUserData} userName ={this.state.userName}setImgData={this.setImgData} setURL={this.setURL}/>
+          ? <Homepage
+              setData={this.setUserData}
+              userName ={this.state.userName}
+              setImgData={this.setImgData}
+              setURL={this.setURL}
+              getUrl={this.state.url}
+              user={this.state.userName}
+            />
           : (this.state.url === 'resultPage')
           ? <ResultPage />
           : (this.state.url === 'historyPage')

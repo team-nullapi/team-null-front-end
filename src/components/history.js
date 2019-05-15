@@ -10,12 +10,12 @@ class History extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  //   if(location.id && appURL ) {
-      
-  //     .then(results => this.setState({ fortunes: results.body }))
-  //   }
-  // }
+  componentDidMount() {
+    if(this.props.getURL === 'historyPage') {
+      superagent.get(`${process.env.REACT_APP_API_URL}/fortunes`).query({data: this.props.user})
+      .then(results => this.setState({ fortunes: results }))
+    }
+  }
 
   render(){
     return(
