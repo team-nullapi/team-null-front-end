@@ -40,7 +40,7 @@ class App extends React.Component {
     .field('userName', this.state.userName)
     .then(
       res => {
-        {this.setUserData(res)}
+        {this.setUserData(res.body)}
       }
     )
 
