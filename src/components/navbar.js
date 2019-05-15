@@ -29,7 +29,8 @@ class ButtonAppBar extends React.Component {
     super(props);
   }
   handleClick = () => {
-    this.props.setURL('historyPage');
+    console.log('props', this.props)
+    // this.props.setURL('historyPage');
   }
   render(){
     const { classes } = this.props;

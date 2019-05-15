@@ -6,7 +6,7 @@ class ResultPage extends React.Component{
   render(){
     return(
       <div className='resultPage'>
-        <NavBar />
+        <NavBar setURL={this.props.setURL} getUrl={this.props.getUrl} user={this.props.user}/>
         <Chart />
       {/* //</Fortune /> */}
       </div>
