@@ -1,5 +1,6 @@
 import React from 'react';
 import Webcam from 'react-webcam';
+import Zoom from 'react-reveal/Zoom';
 
 /** WebcamCapture Component 
  * Get user's picture from user and set 'imgData' state for App
@@ -26,17 +27,19 @@ class WebcamCapture extends React.Component {
 
     return (
      <React.Fragment>
-        <div className="webcam-container">
-          <Webcam
-            audio={false}
-            height={290}
-            ref={this.setRef}
-            screenshotFormat="image/jpeg"
-            width={500}
-            videoConstraints={videoConstraints}
-          />
-          <button onClick={this.capture}>Capture photo</button>
-       </div>
+       <Zoom>
+          <div className="webcam-container">
+            <Webcam
+              audio={false}
+              height={290}
+              ref={this.setRef}
+              screenshotFormat="image/jpeg"
+              width={500}
+              videoConstraints={videoConstraints}
+            />
+            <img height="420" width="350" src={require('../images/btn.gif')} onClick={this.capture}/>
+        </div>
+       </Zoom>
       </React.Fragment>
     );
   }

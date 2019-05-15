@@ -8,7 +8,7 @@
   }
 
   /* Reference : https://codepen.io/bartekd/pen/qFsDf?editors=1100 */
-  main{
+ 
     margin-top:$mrg_top;
     button{
       width: 120px;
@@ -56,13 +56,13 @@
         -webkit-transform: rotate(180deg); /* Safari */
         transform: rotate(180deg);
       }
-    }
+    
 }
 
 .webcam-container{
   // top: 50%;
   // transform: translateY(-50%);
-  // margin-top: $mrg_top;
+   margin-top: $mrg_top;
   text-align: center;
   video{
     border-top-style:double;
@@ -74,7 +74,7 @@
     border-top-width:8px;
     border-bottom-width:8px;
   }
-  button{
+  img{
     display: block;
     margin: 0 auto;
     padding: .5vw;
