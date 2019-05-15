@@ -24,25 +24,33 @@ const styles = {
  * All the styling for the header in each page
  * History is only render when user name is inputed
  * **/
-export const ButtonAppBar = props => {
-  const { classes} = props;
-
-  return (
-    <div className={classes.root}>
-      <AppBar position="static"  style={{ background: 'transparent', boxShadow: 'none'}}>
-        <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
-            Face Your Fortune
-          </Typography>
-          {console.log('props', props.getUrl)}
-          {(props.getUrl === 'startPage') ? ' ' : <Button color="inherit">History</Button> }
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+class ButtonAppBar extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  handleClick = () => {
+    this.props.setURL('historyPage');
+  }
+  render(){
+    const { classes } = this.props;
+    return (
+      <div className={classes.root}>
+        <AppBar position="static"  style={{ background: 'transparent', boxShadow: 'none'}}>
+          <Toolbar>
+            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" color="inherit" className={classes.grow}>
+              Face Your Fortune
+            </Typography>
+            {(this.props.getUrl === 'startPage') ? ' ' : <Button onClick={this.handleClick} color="inherit">History</Button> }
+            {/* <p>{this.props.userName}</p> */}
+            {/* <p>{this.props.getUserName()}</p> */}
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
 }
 
 ButtonAppBar.propTypes = {
