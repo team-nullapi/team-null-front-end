@@ -21,34 +21,38 @@ const styles = {
   }
 };
 
-export const ButtonAppBar = props => {
-  const { classes} = props;
-
-  return (
-    <div className={classes.root}>
-      <AppBar position="static"  style={{ background: 'transparent', boxShadow: 'none'}}>
-        <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-          <i class="material-icons">whatshot</i>
-            {/* <MenuIcon /> */}
-          </IconButton>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
-            Face Your Fortune
-          </Typography>
-          {console.log('props', props.getUrl)}
-          {(props.getUrl === 'startPage') ? ' ' : 
-            <Button color="inherit">
-              <i class="material-icons">poll</i>
-            </Button> }
+/** ButtonAppBar Component 
+ * All the styling for the header in each page
+ * History is only render when user name is inputed
+ * **/
+class ButtonAppBar extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  handleClick = () => {
+    this.props.setURL('historyPage');
+  }
+  render(){
+    const { classes } = this.props;
+    return (
+      <div className={classes.root}>
+        <AppBar position="static"  style={{ background: 'transparent', boxShadow: 'none'}}>
+          <Toolbar>
+            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" color="inherit" className={classes.grow}>
+              Face Your Fortune
+            </Typography>
+            {(this.props.getUrl === 'startPage') ? ' ' : <Button onClick={this.handleClick} color="inherit"> <i class="material-icons">poll</i></Button> }
             <Button color="inherit">
               <i class="material-icons">group</i>
             </Button> 
-          {/* <p>{this.props.userName}</p> */}
-          {/* <p>{this.props.getUserName()}</p> */}
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
 }
 
 ButtonAppBar.propTypes = {

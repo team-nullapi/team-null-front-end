@@ -2,6 +2,10 @@ import React from 'react';
 import superagent from 'superagent';
 import WebcamCapture from './webcamcapture';
 
+/** WebCam Component 
+ * Get user's picture from user and set 'imgData' state for App
+ * By calling webCamCapture Component
+ * **/
 class Webcam  extends React.Component {
   constructor(props){
     super(props);
@@ -12,7 +16,7 @@ class Webcam  extends React.Component {
   }
 
   handleImageRequest = async (obj) => {
-    return await superagent.post(`${process.env.REACT_APP_API_URL}/pic`) // will need to add env
+    return await superagent.post(`${obj.url}/${obj.resource}`)
     .field('imageObj', obj.data.imgData)
     .field('image', 'user image');
   }
@@ -22,26 +26,29 @@ class Webcam  extends React.Component {
       webcamEnabled: !this.state.webcamEnabled,
       imgData: img
     })
+    // this.props.requestHandler();
 
     this.handleImageRequest({
-        url:'http://localhost:3000',
+        url:process.env.REACT_APP_API_URL,
         resource:'pic',
         data: {
           username: this.state.userName,
           imgData: img
         }
       })
-    .then(result => console.log(result))
+    .then(result => this.props.setData(result.body))
   }
 
   controlWebcam = () => {
-    this.setState({ webcamEnabled: !this.state.webcamEnabled })
+    this.setState({ webcamEnabled: !this.state.webcamEnabled });
   }
 
   render(){
     const { webcamEnabled, imgData } = this.state;
+
     let content = webcamEnabled && !imgData ? (
-      <WebcamCapture handler={this.handleWebcam} setImgData={this.props.setImgData}/>
+      <WebcamCapture handler={this.handleWebcam} setImgData={this.props.setImgData} setURL={this.props.setURL}/>
+
     ) : imgData && !webcamEnabled ? 
       (
         <React.Fragment>
@@ -55,9 +62,7 @@ class Webcam  extends React.Component {
     )
     return (
       <React.Fragment>
-        <main>
           {content}
-        </main>
       </React.Fragment>
     )
   }
