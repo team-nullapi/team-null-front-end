@@ -1,6 +1,6 @@
 import React from 'react';
 import superagent from 'superagent';
-import WebcamCapture from './webcamcapture';
+import WebcamCapture from './webcamCapture';
 
 class Webcam  extends React.Component {
   constructor(props){
