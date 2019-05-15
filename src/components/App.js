@@ -36,7 +36,7 @@ class App extends React.Component {
   }
   //sending data to server
   postUserData  = async (img) => {
-     await superagent.post(`${process.env.REACT_APP_API_URL}/pic`)
+    await superagent.post(`${process.env.REACT_APP_API_URL}/pic`)
     .field('imageObj', this.state.imgData)
     .field('userName', this.state.userName)
     .then(
@@ -71,7 +71,7 @@ class App extends React.Component {
               setURL={this.setURL} 
               getUrl={this.state.url}
               user={this.state.userName}
-           /> 
+            /> 
           : (this.state.url ==='homePage')
           ? <Homepage
               setData={this.setUserData}

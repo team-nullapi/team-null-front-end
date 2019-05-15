@@ -1,6 +1,7 @@
 import React from 'react';
 import superagent from 'superagent';
 import WebcamCapture from './webcamcapture';
+import Zoom from 'react-reveal/Zoom';
 
 /** WebCam Component 
  * Get user's picture from user and set 'imgData' state for App
@@ -58,8 +59,12 @@ class Webcam  extends React.Component {
         </React.Fragment>
       )
     : (
+      
         <React.Fragment>
-          <button onClick={this.controlWebcam}>Click Me</button>
+          <Zoom>
+          <img height="420" width="350" src={require('../images/btn.gif')} onClick={this.controlWebcam} />
+          </Zoom>
+          
         </React.Fragment>
     )
     return (
