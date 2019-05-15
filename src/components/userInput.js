@@ -41,7 +41,9 @@ const styles = theme => ({
     borderColor: "white !important"
   }
 });
-
+/** OutlineTextFields Component 
+ * Get user name from user and set 'userName' state for App
+ * **/
 class OutlinedTextFields extends React.Component {
   state = {
     name: '',

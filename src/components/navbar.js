@@ -20,7 +20,10 @@ const styles = {
     marginRight: 20,
   }
 };
-
+/** ButtonAppBar Component 
+ * All the styling for the header in each page
+ * History is only render when user name is inputed
+ * **/
 export const ButtonAppBar = props => {
   const { classes} = props;
 
@@ -36,8 +39,6 @@ export const ButtonAppBar = props => {
           </Typography>
           {console.log('props', props.getUrl)}
           {(props.getUrl === 'startPage') ? ' ' : <Button color="inherit">History</Button> }
-          {/* <p>{this.props.userName}</p> */}
-          {/* <p>{this.props.getUserName()}</p> */}
         </Toolbar>
       </AppBar>
     </div>
