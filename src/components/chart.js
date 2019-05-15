@@ -15,8 +15,9 @@ class Chart extends React.Component{
               5,
               7,
               8,
-              9,
-              20
+              90,
+              22,
+              23
             ],
             backgroundColor:[
               'black',
@@ -25,7 +26,8 @@ class Chart extends React.Component{
               'red',
               'orange',
               'pink',
-              'blue'
+              'blue',
+              'brown'
             ],
           }
         ]
@@ -46,7 +48,7 @@ class Chart extends React.Component{
               },
               legend:{
                 display:true,
-                position: 'left',
+                position: 'bottom',
                 labels: {
                   fontColor: 'rgb(255,215,0)',
                   fontSize: 16
