@@ -68,8 +68,8 @@ class History extends React.Component {
         return (
           <>
             <li key={idx}>
-                    <p>{`Created on: ${date}`}</p>
-                    <p>{val.fortune}</p>
+                    <p id="createdDate">{`Created on: ${date}`}</p>
+                    <p id="historyFortune">{val.fortune}</p>
             </li>
             <br/> 
           </>
