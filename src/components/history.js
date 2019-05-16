@@ -122,7 +122,7 @@ class History extends React.Component {
                 fontSize: 24
               }
             },
-            bodyFontColor: "#fff",
+            fontColor: 'rgb(255,255,255)',
             responsive: true,
             maintainAspectRatio: false
           }}
