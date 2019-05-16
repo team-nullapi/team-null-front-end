@@ -21,7 +21,7 @@ class History extends React.Component {
   }
 
   reduceArr = (arr) => {
-    return arr.reduce((acc, curr) => parseInt(acc) + parseInt(curr)/arr.length);
+    return arr.reduce((acc, curr) => Math.round(parseInt(acc) + parseInt(curr)/arr.length));
   }
   calculateAvg(){
     const { fortunes } = this.state;
@@ -122,7 +122,19 @@ class History extends React.Component {
                 fontSize: 24
               }
             },
-            fontColor: 'rgb(255,255,255)',
+            scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true,
+                      fontColor: 'yellow-orange'
+                  },
+              }],
+            xAxes: [{
+                  ticks: {
+                      fontColor: 'yellow-orange'
+                  },
+              }]
+          },
             responsive: true,
             maintainAspectRatio: false
           }}
