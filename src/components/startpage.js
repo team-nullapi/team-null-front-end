@@ -16,13 +16,12 @@ class StartPage extends React.Component{
     };
   }
 
-  handleChange = (userName) => {
-    this.setState({userName});
+  handleChange = (e) => {
+    this.setState({userName: e.target.value});
 
   }
-  handleSubmit = e =>{
-    e.preventDefault();
-    this.props.setUserName(this.state.userName);
+  handleSubmit = val =>{
+    this.props.setUserName(val);
     this.props.setURL('homePage');
   }
 

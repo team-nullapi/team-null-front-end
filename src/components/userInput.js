@@ -53,8 +53,12 @@ class OutlinedTextFields extends React.Component {
     this.setState({
       [name]: event.target.value,
     });
-    this.props.setUserName(this.state.name);
   };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.handleSubmit(e.target.value);
+  }
 
   render() {
     const { classes } = this.props;
@@ -75,7 +79,7 @@ class OutlinedTextFields extends React.Component {
           variant="outlined"
           onKeyPress={(ev) => {
             if (ev.key === 'Enter') {
-              this.props.handleSubmit(ev);
+              this.handleSubmit(ev);
             }
           }}
           // color='color'
