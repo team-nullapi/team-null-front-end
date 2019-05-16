@@ -27,7 +27,6 @@ class ResultPage extends React.Component{
           }}>
           <Fortune stat={this.props.stats}/>
       </div> 
-       
       </div>
     )
   }
