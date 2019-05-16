@@ -96,7 +96,19 @@
   margin-top:$mrg;
   text-align: center;
   width: 400px;
-  height: 600px;
+  height:400px
+}
+
+#history-list-container h3 {
+  font-family: $font_shoju;
+  font-size: 1.3em;
+  text-align: center;
+  margin-bottom: 1vw;
+}
+
+#list {
+  text-align: center;
+  font-size: 0.8em;
 }
 
 .cameraText {
@@ -143,10 +155,10 @@
   transform: rotate(4deg);
 }
 
-.centered {
+.fortune {
   position: absolute;
   max-width: 300px;
-  top: 15%;
+  top: 35%;
   left: 33%;
   transform: translate(-50%, -50%);
   transform: rotate(3deg);
@@ -158,16 +170,11 @@
   position: absolute;
   max-width: 300px;
   top: 15%;
-  left: 33%;
+  left: 40%;
   transform: translate(-50%, -50%);
   transform: rotate(3deg);
-  text-shadow: 2px 2px #000000;
-  font-size: 25px;
-}
-
-#domTitle {
   display:block;
-  font-size: 40px;
+  font-size: 65px;
   text-shadow: 2px 2px #000000;
   color: gold;
 }
