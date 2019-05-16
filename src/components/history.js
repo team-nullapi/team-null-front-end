@@ -21,7 +21,7 @@ class History extends React.Component {
   }
 
   reduceArr = (arr) => {
-    return arr.reduce((acc, curr) => parseInt(acc) + parseInt(curr)/arr.length);
+    return arr.reduce((acc, curr) => Math.round(parseInt(acc) + parseInt(curr)/arr.length));
   }
   calculateAvg(){
     const { fortunes } = this.state;
@@ -34,16 +34,18 @@ class History extends React.Component {
     let happy = [];
     let dates = [];
     let data = [];
-    for(var i = 0; i < fortunes.length; i++){
-        data.push(fortunes[i].dominant_attribute)
-        sad.push(fortunes[i].sadness);
-        neutral.push(fortunes[i].neutral);
-        disgust.push(fortunes[i].disgust);
-        anger.push(fortunes[i].anger);
-        surprise.push(fortunes[i].surprise);
-        fear.push(fortunes[i].fear);
-        happy.push(fortunes[i].happiness);
-        dates.push(new Date(parseInt(fortunes[i].created_on)).toDateString())
+    if(fortunes) {
+      for(var i = 0; i < fortunes.length; i++){
+          data.push(fortunes[i].dominant_attribute)
+          sad.push(fortunes[i].sadness);
+          neutral.push(fortunes[i].neutral);
+          disgust.push(fortunes[i].disgust);
+          anger.push(fortunes[i].anger);
+          surprise.push(fortunes[i].surprise);
+          fear.push(fortunes[i].fear);
+          happy.push(fortunes[i].happiness);
+          dates.push(new Date(parseInt(fortunes[i].created_on)).toDateString())
+      }
     }
 
     let newSad = sad.length ? this.reduceArr(sad) : [];
@@ -66,8 +68,8 @@ class History extends React.Component {
         return (
           <>
             <li key={idx}>
-                    <p>{`Created on: ${date}`}</p>
-                    <p>{val.fortune}</p>
+                    <p id="createdDate">{`Created on: ${date}`}</p>
+                    <p id="historyFortune">{val.fortune}</p>
             </li>
             <br/> 
           </>
@@ -120,7 +122,19 @@ class History extends React.Component {
                 fontSize: 24
               }
             },
-            borderColor: "rgba(0,0,0,0)",
+            scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true,
+                      fontColor: 'yellow-orange'
+                  },
+              }],
+            xAxes: [{
+                  ticks: {
+                      fontColor: 'yellow-orange'
+                  },
+              }]
+          },
             responsive: true,
             maintainAspectRatio: false
           }}
@@ -135,7 +149,8 @@ class History extends React.Component {
                   position: 'absolute', 
                   left: '45%', 
                   top: '38%',
-                  transform: 'translate(-50%, -50%)'
+                  transform: 'translate(-50%, -50%)',
+                  color: '#fff'
               }}>
                 {chart}
               </div>

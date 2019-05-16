@@ -44,7 +44,7 @@ class WebcamCapture extends React.Component {
         <div style={{
               position: 'absolute', 
               left: '50%', 
-              top: '85%',
+              top: '80%',
               transform: 'translate(-50%, -50%)'
           }}>
           <span class="cameraText">Click </span>

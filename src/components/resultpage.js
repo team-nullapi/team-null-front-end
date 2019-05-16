@@ -13,7 +13,7 @@ class ResultPage extends React.Component{
           style={{
               position: 'absolute', 
               left: '20%', 
-              top: '60%',
+              top: '50%',
               transform: 'translate(-50%, -50%)'
           }}>
           <Chart stats={this.props.stats}/>
@@ -27,7 +27,6 @@ class ResultPage extends React.Component{
           }}>
           <Fortune stat={this.props.stats}/>
       </div> 
-       
       </div>
     )
   }

@@ -96,7 +96,7 @@
   margin-top:$mrg;
   text-align: center;
   width: 400px;
-  height:400px
+  height:500px
 }
 
 #history-list-container h3 {
@@ -155,10 +155,10 @@
   transform: rotate(4deg);
 }
 
-.centered {
+.fortune {
   position: absolute;
   max-width: 300px;
-  top: 15%;
+  top: 35%;
   left: 33%;
   transform: translate(-50%, -50%);
   transform: rotate(3deg);
@@ -170,16 +170,11 @@
   position: absolute;
   max-width: 300px;
   top: 15%;
-  left: 33%;
+  left: 40%;
   transform: translate(-50%, -50%);
   transform: rotate(3deg);
-  text-shadow: 2px 2px #000000;
-  font-size: 25px;
-}
-
-#domTitle {
   display:block;
-  font-size: 40px;
+  font-size: 65px;
   text-shadow: 2px 2px #000000;
   color: gold;
 }
@@ -198,7 +193,26 @@
 #lottoNumbers {
   color: white;
   display:block;
-  font-size: 35px;
+  font-size: 30px;
   text-shadow: 2px 2px #000000;
   color: gold;
+}
+
+.about{
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  span{
+    font-family: 'Kalam', cursive;
+    margin-left: 20px;
+    // font-size:24px;
+  }
+}
+
+#createdDate {
+  color: gold;
+}
+
+#historyFortune {
+  font-family: 'Kalam', cursive;
 }
