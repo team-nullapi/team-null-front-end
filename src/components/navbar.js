@@ -12,6 +12,7 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 const styles = {
   root: {
     flexGrow: 1,
+    fontSize: 'large'
   },
   grow: {
     flexGrow: 1,
@@ -46,16 +47,16 @@ class ButtonAppBar extends React.Component {
         <AppBar position="static"  style={{ background: 'transparent', boxShadow: 'none'}}>
           <Toolbar>
             <IconButton onClick={this.handleHomeClick} className={classes.menuButton} color="inherit" aria-label="Menu">
-              <SvgIcon>
-                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+              <SvgIcon fontSize="large">
+                <path d="M12 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
               </SvgIcon>
             </IconButton>
             <Typography id="title" variant="h6" color="inherit" className={classes.grow}>
                 Face Your Fortune
             </Typography>
-            {(this.props.getUrl === 'startPage') || (this.props.getUrl === 'historyPage') ? ' ' : <Button onClick={this.handlePollClick} color="inherit"> <i class="material-icons">poll</i></Button> }
+            {(this.props.getUrl === 'startPage') || (this.props.getUrl === 'historyPage') ? ' ' : <Button onClick={this.handlePollClick} color="inherit"> <i class="material-icons md-48">poll</i></Button> }
             <Button onClick={this.handleAboutClick}  color="inherit">
-              <i className="material-icons">group</i>
+              <i className="material-icons md-48">group</i>
             </Button> 
           </Toolbar>
         </AppBar>

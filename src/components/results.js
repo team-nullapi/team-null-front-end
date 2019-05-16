@@ -30,7 +30,8 @@ class Result extends React.Component {
             <div class="top-left"></div>
             <div class="top-right"></div>
             <div class="bottom-right"></div>
-            <div class="centered"><span id="domTitle">{this.props.stat.dominant_attribute}</span>"{this.props.stat.fortune}"</div>
+            <div class="domTitle">{this.props.stat.dominant_attribute}</div>
+            <div class="fortune">"{this.props.stat.fortune}"</div>
             <div class="lottoText">Your Lucky Lotto Numbers: <span id="lottoNumbers">{this.props.stat.lotto}</span></div>
           </div>
           </div>
