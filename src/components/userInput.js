@@ -25,9 +25,10 @@ const styles = theme => ({
     color: "white"
   },
   label: {
+    color: "lightgrey",
     '&$focused': {
       color: 'white'
-    },
+    }
   },
   focused: {},
   outlinedInput: {
@@ -49,11 +50,16 @@ class OutlinedTextFields extends React.Component {
     name: '',
   };
 
-  handleChange = event => {
+  handleChange = name => event => {
     this.setState({
-      name: event.target.value
+      [name]: event.target.value,
     });
   };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.handleSubmit(e.target.value);
+  }
 
   render() {
     const { classes } = this.props;
@@ -64,18 +70,17 @@ class OutlinedTextFields extends React.Component {
           // floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
           InputProps={{className: classes.input}}
           id="outlined-name"
-          label="Enter Your Name 输入你的名字"
+          label="输入你的名字 (Enter Your Name)"
           className={classes.textField}
           className={classes.menu}
           classname="test-label"
           value={this.state.name}
-          onChange={this.handleChange}
+          onChange={this.handleChange('name')}
           margin="normal"
           variant="outlined"
           onKeyPress={(ev) => {
             if (ev.key === 'Enter') {
-              ev.preventDefault();
-              this.props.handleSubmit(this.state.name);
+              this.handleSubmit(ev);
             }
           }}
           // color='color'
