@@ -192,8 +192,12 @@
 }
 
 .about{
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
   span{
     font-family: 'Kalam', cursive;
-    font-size:24px;
+    margin-left: 20px;
+    // font-size:24px;
   }
 }
