@@ -49,11 +49,10 @@ class OutlinedTextFields extends React.Component {
     name: '',
   };
 
-  handleChange = name => event => {
+  handleChange = event => {
     this.setState({
-      [name]: event.target.value,
+      name: event.target.value
     });
-    this.props.setUserName(this.state.name);
   };
 
   render() {
@@ -70,12 +69,13 @@ class OutlinedTextFields extends React.Component {
           className={classes.menu}
           classname="test-label"
           value={this.state.name}
-          onChange={this.handleChange('name')}
+          onChange={this.handleChange}
           margin="normal"
           variant="outlined"
           onKeyPress={(ev) => {
             if (ev.key === 'Enter') {
-              this.props.handleSubmit(ev);
+              ev.preventDefault();
+              this.props.handleSubmit(this.state.name);
             }
           }}
           // color='color'
