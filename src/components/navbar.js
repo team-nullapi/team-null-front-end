@@ -34,8 +34,6 @@ class ButtonAppBar extends React.Component {
     this.props.setURL('historyPage');
   }
   handleHomeClick = () => {
-    this.props.user ? 
-    this.props.setURL('homePage') :
     this.props.setURL('startPage')
   }
   render(){
