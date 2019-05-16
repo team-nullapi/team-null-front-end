@@ -31,12 +31,12 @@ class Chart extends React.Component{
           label: 'Statisfaction',
           data:data,
           backgroundColor:[
-            'black',
-            'lightgreen',
-            'purple',
-            'red',
+            'lightblue',
+            'grey',
             'orange',
-            'pink',
+            'red',
+            'yellow',
+            'black',
             'blue',
             'brown'
           ],
@@ -50,7 +50,7 @@ class Chart extends React.Component{
           options={{
               title : {
                 display: true,
-                text: '  Emotions',
+                text: '  Your Result:',
                 fontColor: 'rgb(255,215,0)',
                 fontSize: 20
               },

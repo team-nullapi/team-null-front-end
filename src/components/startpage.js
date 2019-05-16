@@ -21,14 +21,23 @@ class StartPage extends React.Component{
       <div
           style={{
               position: 'absolute', 
-              left: '50%', 
+              left: '47%', 
               top: '40%',
               transform: 'translate(-50%, -50%)'
           }}>
-      <UserInput 
+        <img height="400" width="400" src={require('../images/titleart.gif')} alt="card"/>
+      </div>
+      <div
+          style={{
+              position: 'absolute', 
+              left: '50%', 
+              top: '75%',
+              transform: 'translate(-50%, -50%)'
+          }}>
+        <UserInput 
         setUserName={this.handleChange} 
         handleSubmit={this.handleSubmit}/>
-      </div>  
+      </div>
       </>
     )
   }
