@@ -198,4 +198,13 @@
   color: gold;
 }
 
-.aboutMe {}
+.about{
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  span{
+    font-family: 'Kalam', cursive;
+    margin-left: 20px;
+    // font-size:24px;
+  }
+}
