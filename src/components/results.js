@@ -33,7 +33,6 @@ class Result extends React.Component {
             <div class="centered"><span id="domTitle">{this.props.stat.dominant_attribute}</span>
             "{this.props.stat.fortune}"</div>
           </div>
-
           </div>
         </ReactCardFlip>
       </Zoom>

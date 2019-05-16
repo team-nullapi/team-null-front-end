@@ -1,6 +1,7 @@
 import React from 'react';
 import Webcam from 'react-webcam';
 import Zoom from 'react-reveal/Zoom';
+import Slide from 'react-reveal/Slide';
 
 /** WebcamCapture Component 
  * Get user's picture from user and set 'imgData' state for App
@@ -37,9 +38,11 @@ class WebcamCapture extends React.Component {
               width={500}
               videoConstraints={videoConstraints}
             />
-            <img height="420" width="350" src={require('../images/btn.gif')} onClick={this.capture}/>
         </div>
-       </Zoom>
+        </Zoom>
+        <Slide top>
+          <img height="420" width="350" src={require('../images/btn.gif')} onClick={this.capture}/>
+        </Slide>
       </React.Fragment>
     );
   }

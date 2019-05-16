@@ -9,19 +9,8 @@ import UserInput from './userInput'
  * **/
 
 class StartPage extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      userName : ''
-    };
-  }
-
-  handleChange = (e) => {
-    this.setState({userName: e.target.value});
-
-  }
-  handleSubmit = val =>{
-    this.props.setUserName(val);
+  handleSubmit = (userName) =>{
+    this.props.setUserName(userName);
     this.props.setURL('homePage');
   }
 

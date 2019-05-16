@@ -3,6 +3,7 @@ import superagent from 'superagent';
 import WebcamCapture from './webcamcapture';
 import Zoom from 'react-reveal/Zoom';
 
+
 /** WebCam Component 
  * Get user's picture from user and set 'imgData' state for App
  * By calling webCamCapture Component
