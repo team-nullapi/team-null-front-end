@@ -55,7 +55,7 @@ class ButtonAppBar extends React.Component {
             </Typography>
             {(this.props.getUrl === 'startPage') || (this.props.getUrl === 'historyPage') ? ' ' : <Button onClick={this.handlePollClick} color="inherit"> <i class="material-icons">poll</i></Button> }
             <Button onClick={this.handleAboutClick}  color="inherit">
-              <i class="material-icons">group</i>
+              <i className="material-icons">group</i>
             </Button> 
           </Toolbar>
         </AppBar>
