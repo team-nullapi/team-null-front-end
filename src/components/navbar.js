@@ -6,7 +6,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import SvgIcon from '@material-ui/core/SvgIcon';
+
 
 const styles = {
   root: {
@@ -44,7 +45,9 @@ class ButtonAppBar extends React.Component {
         <AppBar position="static"  style={{ background: 'transparent', boxShadow: 'none'}}>
           <Toolbar>
             <IconButton onClick={this.handleHomeClick} className={classes.menuButton} color="inherit" aria-label="Menu">
-              <MenuIcon />
+              <SvgIcon>
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+              </SvgIcon>
             </IconButton>
             <Typography variant="h6" color="inherit" className={classes.grow}>
                 Face Your Fortune
