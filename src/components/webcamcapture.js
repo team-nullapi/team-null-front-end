@@ -2,6 +2,7 @@ import React from 'react';
 import Webcam from 'react-webcam';
 import Zoom from 'react-reveal/Zoom';
 import Slide from 'react-reveal/Slide';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
 /** WebcamCapture Component 
  * Get user's picture from user and set 'imgData' state for App
@@ -27,8 +28,8 @@ class WebcamCapture extends React.Component {
     };
 
     return (
-     <React.Fragment>
-       <Zoom>
+      <React.Fragment>
+        <Zoom>
           <div className="webcam-container">
             <Webcam
               audio={false}
@@ -40,14 +41,15 @@ class WebcamCapture extends React.Component {
             />
         </div>
         </Zoom>
-        <div
-          style={{
+        <div style={{
               position: 'absolute', 
               left: '50%', 
-              top: '75%',
+              top: '85%',
               transform: 'translate(-50%, -50%)'
           }}>
-          Press Enter
+          <span class="cameraText">Click </span>
+          <i class="material-icons md-48" onClick={this.capture}>photo_camera</i>
+          <span class="cameraText"> Me!</span>
           </div>
         {/* <Slide top>
           <img height="420" width="350" src={require('../images/btn.gif')} onClick={this.capture}/>
