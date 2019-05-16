@@ -36,6 +36,9 @@ class ButtonAppBar extends React.Component {
   handleHomeClick = () => {
     this.props.setURL('startPage')
   }
+  handleAboutClick = () => {
+    this.props.setURL('aboutPage')
+  }
   render(){
     const { classes } = this.props;
     return (
@@ -51,7 +54,7 @@ class ButtonAppBar extends React.Component {
                 Face Your Fortune
             </Typography>
             {(this.props.getUrl === 'startPage') || (this.props.getUrl === 'historyPage') ? ' ' : <Button onClick={this.handlePollClick} color="inherit"> <i class="material-icons">poll</i></Button> }
-            <Button color="inherit">
+            <Button onClick={this.handleAboutClick}  color="inherit">
               <i class="material-icons">group</i>
             </Button> 
           </Toolbar>
