@@ -1,0 +1,58 @@
+body {
+  /* background:radial-gradient(#c187ff, #fff) fixed; */
+  background-image: url(./images/china-red-1006697_960_720.jpg);
+  background-size: cover;
+  font-size: 20px;
+  font-family: 'Kalam', cursive;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 15%;
+  left: 25%;
+  transform: rotate(4deg);
+}
+
+.top-left {
+  position: absolute;
+  top: 8%;
+  left: 28%;
+  transform: rotate(4deg);
+}
+
+.top-right {
+  position: absolute;
+  top: 10%;
+  right: 25%;
+  transform: rotate(4deg);
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 12%;
+  right: 25%;
+  transform: rotate(4deg);
+}
+
+.centered {
+  position: absolute;
+  max-width: 300px;
+  top: 15%;
+  left: 33%;
+  transform: translate(-50%, -50%);
+  transform: rotate(3deg);
+  text-shadow: 2px 2px #000000;
+  font-size: 25px;
+}
+
+#domTitle {
+  display:block;
+  font-size: 40px;
+  text-shadow: 2px 2px #000000;
+}
