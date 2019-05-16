@@ -31,7 +31,7 @@ class Webcam  extends React.Component {
     // this.props.requestHandler();
 
     this.handleImageRequest({
-        url:process.env.REACT_APP_API_URL,
+        url:'http://localhost:3000',
         resource:'pic',
         data: {
           username: this.props.user,

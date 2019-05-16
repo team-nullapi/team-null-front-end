@@ -19,6 +19,8 @@ class App extends React.Component {
       imgData : '',
       url: 'startPage',
       userData : {},
+      stats : [],
+      domStats : ''
     };
   }
   /* The setter to Set the state of APP object */
@@ -32,7 +34,9 @@ class App extends React.Component {
     this.setState({url})
   };
   setUserData = (userData) => {
-    this.setState({userData})
+    this.setState({
+      userData
+    })
   }
   //sending data to server
   postUserData  = async (img) => {
@@ -45,17 +49,8 @@ class App extends React.Component {
         this.setUserData(res.body)
       }
     )
-
-    
   }
-  // upon reaching the result page sends data to server and recives data back
-  // componentDidMount(){
-  //   if(this.state.url==='resultPage'){
-  //     this.postUserData();
-  //   }
-  // }
-
-
+  
   render() {
     return (
       <React.Fragment>
@@ -77,7 +72,7 @@ class App extends React.Component {
               setData={this.setUserData}
               userName ={this.state.userName}
               setImgData={this.setImgData}
-              setURL={this.setURL}
+              setURL={this.setURL}  
               getUrl={this.state.url}
               user={this.state.userName}
             />
@@ -86,6 +81,7 @@ class App extends React.Component {
               setURL={this.setURL}
               getUrl={this.state.url}
               user={this.state.userName} 
+              stats={this.state.userData}
             />
           : (this.state.url === 'historyPage')
           ? <History
