@@ -40,9 +40,18 @@ class WebcamCapture extends React.Component {
             />
         </div>
         </Zoom>
-        <Slide top>
+        <div
+          style={{
+              position: 'absolute', 
+              left: '50%', 
+              top: '75%',
+              transform: 'translate(-50%, -50%)'
+          }}>
+          Press Enter
+          </div>
+        {/* <Slide top>
           <img height="420" width="350" src={require('../images/btn.gif')} onClick={this.capture}/>
-        </Slide>
+        </Slide> */}
       </React.Fragment>
     );
   }
