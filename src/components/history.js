@@ -89,12 +89,12 @@ class History extends React.Component {
           label: 'Emotions',
           data:data,
           backgroundColor:[
-            'black',
-            'lightgreen',
-            'purple',
-            'red',
+            'lightblue',
+            'grey',
             'orange',
-            'pink',
+            'red',
+            'yellow',
+            'black',
             'blue',
             'brown'
           ],
@@ -121,6 +121,7 @@ class History extends React.Component {
                 fontSize: 24
               }
             },
+            borderColor: "rgba(0,0,0,0)",
             responsive: true,
             maintainAspectRatio: false
           }}
