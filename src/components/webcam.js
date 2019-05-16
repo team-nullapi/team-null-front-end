@@ -28,7 +28,6 @@ class Webcam  extends React.Component {
       webcamEnabled: !this.state.webcamEnabled,
       imgData: img
     })
-    // this.props.requestHandler();
 
     this.handleImageRequest({
         url:process.env.REACT_APP_API_URL,

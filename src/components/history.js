@@ -23,7 +23,6 @@ class History extends React.Component {
     const { fortunes } = this.state;
     const content = (
       fortunes.map((val, idx) => {
-        console.log('type', typeof val.created_on);
         let date = new Date(parseInt(val.created_on)).toDateString();
         return (
           <li key={idx}>
