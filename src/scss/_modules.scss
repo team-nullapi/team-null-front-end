@@ -96,7 +96,19 @@
   margin-top:$mrg;
   text-align: center;
   width: 400px;
-  height: 600px;
+  height:400px
+}
+
+#history-list-container h3 {
+  font-family: $font_shoju;
+  font-size: 1.3em;
+  text-align: center;
+  margin-bottom: 1vw;
+}
+
+#list {
+  text-align: center;
+  font-size: 0.8em;
 }
 
 .cameraText {
