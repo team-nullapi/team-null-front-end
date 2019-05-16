@@ -3,13 +3,24 @@
   color:white;
   font-size: $font_size;
   
-  h3{
-    margin-top:$mrg_top;
+  p {
+    margin-top:$mrg;
+    margin-bottom: $mrg;
+    // font-family: $font_shoju;
+    font-family: $font_ceviche;
+    line-height: 1vw;
+    letter-spacing: 1vw;
+    font-size:1.3em;
+    text-shadow: 0 1px 0 rgb(94, 91, 91), 0 2px 0 #777777, 0 3px 0 rgb(119, 119, 119), 0 4px 0 #8d6767, 0 5px 0 rgb(58, 57, 57), 0 6px 1px rgba(0,0,0,.1);
+  }
+
+  #web-msg {
+    font-size:0.8em;
   }
 
   /* Reference : https://codepen.io/bartekd/pen/qFsDf?editors=1100 */
  
-    margin-top:$mrg_top;
+    margin-top:$mrg;
     button{
       width: 120px;
       height: 60px;
@@ -62,7 +73,7 @@
 .webcam-container{
   // top: 50%;
   // transform: translateY(-50%);
-   margin-top: $mrg_top;
+   margin-top: $mrg;
   text-align: center;
   video{
     border-top-style:double;
@@ -81,8 +92,8 @@
   }
 }
 
-.resultChart{
-  margin-top:$mrg_top;
+.resultChart {
+  margin-top:$mrg;
   text-align: center;
   width: 400px;
   height:400px
