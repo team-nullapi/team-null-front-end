@@ -34,16 +34,18 @@ class History extends React.Component {
     let happy = [];
     let dates = [];
     let data = [];
-    for(var i = 0; i < fortunes.length; i++){
-        data.push(fortunes[i].dominant_attribute)
-        sad.push(fortunes[i].sadness);
-        neutral.push(fortunes[i].neutral);
-        disgust.push(fortunes[i].disgust);
-        anger.push(fortunes[i].anger);
-        surprise.push(fortunes[i].surprise);
-        fear.push(fortunes[i].fear);
-        happy.push(fortunes[i].happiness);
-        dates.push(new Date(parseInt(fortunes[i].created_on)).toDateString())
+    if(fortunes) {
+      for(var i = 0; i < fortunes.length; i++){
+          data.push(fortunes[i].dominant_attribute)
+          sad.push(fortunes[i].sadness);
+          neutral.push(fortunes[i].neutral);
+          disgust.push(fortunes[i].disgust);
+          anger.push(fortunes[i].anger);
+          surprise.push(fortunes[i].surprise);
+          fear.push(fortunes[i].fear);
+          happy.push(fortunes[i].happiness);
+          dates.push(new Date(parseInt(fortunes[i].created_on)).toDateString())
+      }
     }
 
     let newSad = sad.length ? this.reduceArr(sad) : [];
@@ -120,7 +122,7 @@ class History extends React.Component {
                 fontSize: 24
               }
             },
-            borderColor: "rgba(0,0,0,0)",
+            bodyFontColor: "#fff",
             responsive: true,
             maintainAspectRatio: false
           }}
@@ -135,7 +137,8 @@ class History extends React.Component {
                   position: 'absolute', 
                   left: '45%', 
                   top: '38%',
-                  transform: 'translate(-50%, -50%)'
+                  transform: 'translate(-50%, -50%)',
+                  color: '#fff'
               }}>
                 {chart}
               </div>
