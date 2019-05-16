@@ -28,7 +28,6 @@ class Webcam  extends React.Component {
       webcamEnabled: !this.state.webcamEnabled,
       imgData: img
     })
-    // this.props.requestHandler();
 
     this.handleImageRequest({
         url:'http://localhost:3000',
@@ -49,8 +48,10 @@ class Webcam  extends React.Component {
     const { webcamEnabled, imgData } = this.state;
 
     let content = webcamEnabled && !imgData ? (
-      <WebcamCapture handler={this.handleWebcam} setImgData={this.props.setImgData} setURL={this.props.setURL}/>
-
+      <>
+        <p id="web-msg">Let's take your pic!</p>
+        <WebcamCapture handler={this.handleWebcam} setImgData={this.props.setImgData} setURL={this.props.setURL}/>
+      </>
     ) : imgData && !webcamEnabled ? 
       (
         <React.Fragment>

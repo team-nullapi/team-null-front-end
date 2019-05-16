@@ -6,7 +6,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import SvgIcon from '@material-ui/core/SvgIcon';
+
 
 const styles = {
   root: {
@@ -29,8 +30,13 @@ class ButtonAppBar extends React.Component {
   constructor(props){
     super(props);
   }
-  handleClick = () => {
+  handlePollClick = () => {
     this.props.setURL('historyPage');
+  }
+  handleHomeClick = () => {
+    this.props.user ? 
+    this.props.setURL('homePage') :
+    this.props.setURL('startPage')
   }
   render(){
     const { classes } = this.props;
@@ -38,13 +44,15 @@ class ButtonAppBar extends React.Component {
       <div className={classes.root}>
         <AppBar position="static"  style={{ background: 'transparent', boxShadow: 'none'}}>
           <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-              <MenuIcon />
+            <IconButton onClick={this.handleHomeClick} className={classes.menuButton} color="inherit" aria-label="Menu">
+              <SvgIcon>
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+              </SvgIcon>
             </IconButton>
             <Typography variant="h6" color="inherit" className={classes.grow}>
-              Face Your Fortune
+                Face Your Fortune
             </Typography>
-            {(this.props.getUrl === 'startPage') || (this.props.getUrl === 'historyPage') ? ' ' : <Button onClick={this.handleClick} color="inherit"> <i class="material-icons">poll</i></Button> }
+            {(this.props.getUrl === 'startPage') || (this.props.getUrl === 'historyPage') ? ' ' : <Button onClick={this.handlePollClick} color="inherit"> <i class="material-icons">poll</i></Button> }
             <Button color="inherit">
               <i class="material-icons">group</i>
             </Button> 
