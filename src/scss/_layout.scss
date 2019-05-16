@@ -1,0 +1,21 @@
+#history-graph-container {
+  position: absolute;
+  left: 63%; 
+  top: 50%;
+  transform:translate(-50%, -50%);
+  font-family: $font-shoju;
+}
+#history-list-container {
+  position: absolute; 
+  left: 15%;
+  top: 36%;
+  height: 200px;
+  transform:translate(-50%, -50%);
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#list {
+  height: 380px;
+  overflow-y: scroll;
+}
