@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBar from './navbar'
 
 class About extends React.Component {
   constructor(props){
@@ -10,6 +11,7 @@ class About extends React.Component {
   render(){
     return(
       <>
+        <NavBar setURL={this.props.setURL} getUrl={this.props.getUrl} user={this.props.user} />
         <h2>About us</h2>
       </>
     )

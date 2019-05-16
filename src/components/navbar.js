@@ -34,14 +34,15 @@ class ButtonAppBar extends React.Component {
     this.props.setURL('historyPage');
   }
   handleHomeClick = () => {
-    this.props.user ? 
-    this.props.setURL('homePage') :
     this.props.setURL('startPage')
+  }
+  handleAboutClick = () => {
+    this.props.setURL('aboutPage')
   }
   render(){
     const { classes } = this.props;
     return (
-      <div className={classes.root}>
+      <div id="page-nav" className={classes.root}>
         <AppBar position="static"  style={{ background: 'transparent', boxShadow: 'none'}}>
           <Toolbar>
             <IconButton onClick={this.handleHomeClick} className={classes.menuButton} color="inherit" aria-label="Menu">
@@ -49,11 +50,11 @@ class ButtonAppBar extends React.Component {
                 <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
               </SvgIcon>
             </IconButton>
-            <Typography variant="h6" color="inherit" className={classes.grow}>
+            <Typography id="title" variant="h6" color="inherit" className={classes.grow}>
                 Face Your Fortune
             </Typography>
             {(this.props.getUrl === 'startPage') || (this.props.getUrl === 'historyPage') ? ' ' : <Button onClick={this.handlePollClick} color="inherit"> <i class="material-icons">poll</i></Button> }
-            <Button color="inherit">
+            <Button onClick={this.handleAboutClick}  color="inherit">
               <i class="material-icons">group</i>
             </Button> 
           </Toolbar>

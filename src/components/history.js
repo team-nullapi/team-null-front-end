@@ -21,7 +21,7 @@ class History extends React.Component {
 
   render(){
     const { fortunes } = this.state;
-    const content = (
+    const content = fortunes ? (
       fortunes.map((val, idx) => {
         let date = new Date(parseInt(val.created_on)).toDateString();
         return (
@@ -31,6 +31,10 @@ class History extends React.Component {
           </li>
         );
       })
+    ) : (
+      <div>
+        <p>No Fortunes to display</p>
+      </div>
     )
     return(
       <>

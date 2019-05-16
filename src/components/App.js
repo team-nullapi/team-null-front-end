@@ -90,7 +90,11 @@ class App extends React.Component {
               getUrl={this.state.url}
               user={this.state.userName}
             />
-          : <About />
+          : <About 
+              setURL={this.setURL}
+              getUrl={this.state.url}
+              user={this.state.userName} 
+            />
         }
       </React.Fragment>
     );
