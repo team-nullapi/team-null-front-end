@@ -31,7 +31,11 @@ class History extends React.Component {
           </li>
         );
       })
-    ) : ''
+    ) : (
+      <div>
+        <p>No Fortunes to display</p>
+      </div>
+    )
     return(
       <>
         <NavBar setURL={this.props.setURL} getUrl={this.props.getUrl} user={this.props.user}/>
