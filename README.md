@@ -9,10 +9,10 @@ Web Application that utilizes facial detection to present a user with a tailored
 
 ## Getting Started
 Run commands:
-git clone
-npm i
-npm start
-*look at Instructions.md to see how to use the site.
+* git clone
+* npm i
+* npm start
+* look at Instructions.md to see how to use the site.
 
 ## Architecture
 Modern frontend application built: React.JS, Chart.JS, Sass, MaterialUI.
@@ -29,6 +29,9 @@ To present users with a fun way to get various data of their current mood.
 [React-Chart.JS](https://www.npmjs.com/package/react-chartjs-2)
 
 [React-Webcam](https://www.npmjs.com/package/react-webcam)
+
+[Sass](https://sass-lang.com/)
+
 
 
 
